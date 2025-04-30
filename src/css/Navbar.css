@@ -1,14 +1,64 @@
-.nav-container {
-    background-color: #333;
-    padding: 2rem;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.navbar {
+  font-family: 'Poppins', sans-serif;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
-.a-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 80%;
+/* Base styles for links and dropdown toggles */
+.navbar .nav-link,
+.navbar .dropdown-toggle {
+  position: relative;
+  color: #222222;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Underline only on regular nav-links (not on the dropdown toggle) */
+.navbar .nav-link:not(.dropdown-toggle)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #ff3c78;
+  transition: width 0.3s ease;
+}
+
+/* Hover effects on link text */
+.navbar .nav-link:hover,
+.navbar .dropdown-toggle:hover {
+  color: #ff3c78;
+  text-shadow: 0 0 8px rgba(255,60,120,0.6);
+}
+
+/* Expand underline on hover (only for nav-links) */
+.navbar .nav-link:hover:not(.dropdown-toggle)::after {
+  width: 100%;
+}
+
+/* Dropdown items hover */
+.navbar .dropdown-item {
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navbar .dropdown-item:hover {
+  background: rgba(255,60,120,0.1);
+  color: #ff3c78;
+}
+
+/* CartWidget inside navbar */
+.navbar .nav-link .cart-widget {
+  display: flex;
+  align-items: center;
+  color: #222222;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar .nav-link .cart-widget:hover {
+  color: #ff3c78;
+  text-shadow: 0 0 8px rgba(255,60,120,0.6);
 }

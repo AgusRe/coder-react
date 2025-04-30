@@ -1,12 +1,13 @@
 import './App.css'
-import Navbar from './components/Navbar'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarReact from './components/Navbar'
 import ItemListContainer from './components/ItemListContainer'
 
 function App() {
   return (
   <>
-    <Navbar/>
-    <ItemListContainer greeting = "¡Elige tú equipamiento pro!"/>
+    <NavbarReact/>
+    <ItemListContainer greeting = "¡Elige tú equipamiento profesional!"/>
   </>
   )
 }
