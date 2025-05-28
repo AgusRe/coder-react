@@ -40,27 +40,23 @@ const Cart = ({ items, onRemove, onQuantityChange }) => {
                 <button
                   className="btn btn-outline-secondary"
                   onClick={() => onQuantityChange(id, quantity - 1)}
-                  disabled={quantity <= 1}
-                >
+                  disabled={quantity <= 1}>
                   –
                 </button>
                 <input
                   type="text"
                   className="form-control text-center"
                   value={quantity}
-                  readOnly
-                />
+                  readOnly/>
                 <button
                   className="btn btn-outline-secondary"
-                  onClick={() => onQuantityChange(id, quantity + 1)}
-                >
+                  onClick={() => onQuantityChange(id, quantity + 1)}>
                   +
                 </button>
               </div>
               <button
                 className="btn btn-sm btn-danger"
-                onClick={() => onRemove(id)}
-              >
+                onClick={() => onRemove(id)}>
                 Quitar
               </button>
             </div>
