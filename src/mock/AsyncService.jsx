@@ -3,7 +3,7 @@ const products = [
         id: '01',
         name: 'Mouse Pad Gaming L Antideslizante Meetion Mt-p110 Premium Color Negro',
         price: 12500,
-        description: 'Descripción del mousepad',
+        description: 'Mouse Pad L Antideslizante',
         stock: 10,
         img: 'https://i.postimg.cc/fTkZS4Tb/imagen-2025-05-19-162826881.png',
         category: 'mas vendidos'

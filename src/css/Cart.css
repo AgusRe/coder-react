@@ -1,0 +1,32 @@
+.cart-empty {
+  background: #f8f9fa;
+  border-radius: 0.25rem;
+}
+
+.cart-container {
+  background: #fff;
+  border-radius: 0.25rem;
+}
+
+.cart-item-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
+
+.cart-item-info h5 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.cart-summary h4 {
+  font-weight: 600;
+}
+
+@media (max-width: 576px) {
+  .cart-item-actions {
+    width: 100%;
+    justify-content: flex-start !important;
+  }
+}
