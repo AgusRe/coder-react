@@ -1,21 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import { getOneProduct, getProducts } from "../mock/AsyncService"
-import ItemDetail from "./ItemDetail"
-import { useParams } from "react-router-dom"
+import React, { useEffect, useState } from 'react';
+import { getProducts } from '../mock/AsyncService';  // ← ya no importamos getOneProduct
+import ItemDetail from './ItemDetail';
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
-    const [detalle, setDetalle] = useState({})
-    const {itemId} = useParams()
+  const [detalle, setDetalle] = useState(null);
+  const { itemId } = useParams();
 
-    useEffect(() => {
-        getOneProduct(itemId)
-        .then((response)=>setDetalle(response))
-        .catch((error)=>console.error(error))
-    },[])
+  useEffect(() => {
+    setDetalle(null);
+    getProducts()
+      .then((response) => {
+        const producto = response.find(
+          item => String(item.id) === String(itemId)
+        );
+        setDetalle(producto || false);
+      })
+      .catch((error) => {
+        console.error('Error al cargar detalle:', error);
+        setDetalle(false);
+      });
+  }, [itemId]);
 
-    return (
-        <ItemDetail detalle={detalle}/>
-    )
-}
+  if (detalle === null) return <p>Cargando detalle…</p>;
+  if (!detalle) return <p>No se encontró el producto con id "{itemId}".</p>;
 
-export default ItemDetailContainer
+  return <ItemDetail detalle={detalle} />;
+};
+
+export default ItemDetailContainer;
