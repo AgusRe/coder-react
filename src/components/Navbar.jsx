@@ -26,7 +26,7 @@ function NavbarReact() {
           </Nav>
           <Nav>
             <Nav.Link as={NavLink} to='/carro'>
-              <CartWidget cantidad={7} />
+              <CartWidget/>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
