@@ -1,40 +1,53 @@
-const products = [
+export const products = [
     {
-        id: '01',
-        name: 'Mouse Pad Gaming L Antideslizante Meetion Mt-p110 Premium Color Negro',
-        price: 12500,
-        description: 'Mouse Pad L Antideslizante',
-        stock: 10,
-        img: 'https://i.postimg.cc/fTkZS4Tb/imagen-2025-05-19-162826881.png',
-        category: 'mas vendidos'
+        name: 'Silla gamer',
+        price: 400000,
+        description: 'Silla gamer ergonómica con soporte lumbar hecha de oro y diamantes, ideal para largas sesiones de juego.',
+        stock: 21,
+        img: 'https://i.postimg.cc/L8BHPXz9/imagen-2025-06-14-143106621.png',
+        category: 'sillas gamer'
     },
     {
-        id: '02',
-        name: 'Monitor Gamer LG con pantalla de 27" 144Hz 220V y resolución 4K',
-        price: 145000,
-        description: 'Monitor 144zh 27"',
-        stock: 5,
-        img: 'https://i.postimg.cc/6pwkVDBR/imagen-2025-05-19-163148769.png',
-        category: 'ofertas'
+        name: 'Silla Gamer Marvo Scorpion Ch-106',
+        price: 200000,
+        description: 'Silla Gamer Marvo Scorpion Ch-106 Negro Y Roja Ergonomica',
+        stock: 4,
+        img: 'https://i.postimg.cc/5Nm4Yy5x/imagen-2025-06-14-143256906.png',
+        category: 'sillas gamer'
     },
     {
-        id: '03',
-        name: 'Mouse Gamer Inalámbrico Redragon Storm Pro M808-ks Negro Color Black',
-        price: 20000,
-        description: 'Mouse inalambrico 1000hz 16000dpi',
-        stock: 20,
-        img: 'https://i.postimg.cc/sxqLZNwB/imagen-2025-05-19-162936084.png',
-        category: 'ofertas'
+        name: 'Silla Gamer Gadnic',
+        price: 140000,
+        description: 'Silla Gamer Gadnic de Escritorio Ergonómica con Ruedas Verde Ergonomica',
+        stock: 7,
+        img: 'https://i.postimg.cc/MKZkLDRS/imagen-2025-06-14-143456458.png',
+        category: 'sillas gamer'
     },
     {
-        id: '04',
-        name: 'Teclado mecánico HYPERX ALLOY FPS CHERRY MX RED',
-        price: 40000,
-        description: 'Teclado inalambrico switches cherry mx red',
-        stock: 17,
-        img: 'https://i.postimg.cc/DzPRY5yD/imagen-2025-05-19-162911622.png',
-        category: 'mas vendidos'
+        name: 'SILLA GAMER SYX CH-451 PK ROSA PINK',
+        price: 340000,
+        description: 'Silla Gamer SYX CH-451 PK ROSA PINK, ergonomica de cuero con estructura metalica ideal para ganarle la lane',
+        stock: 9,
+        img: 'https://i.postimg.cc/C5F2WhRN/imagen-2025-06-14-143557233.png',
+        category: 'sillas gamer'
+    },
+    {
+        name: 'Auriculares Hyperx Cloud Alpha Inalámbricos Red Pc Color Negro',
+        price: 117000,
+        description: 'Auriculares ideales para no perderse ni un solo sonido del juego. Vas a escuchar los pasos de los rivales en todo el mapa.',
+        stock: 9,
+        img: 'https://i.postimg.cc/Y2n8pfZk/imagen-2025-06-14-143827709.png',
+        category: 'perifericos'
+    },
+    {
+        name: 'Auriculares Inalámbricos Logitech G435 Ligeros 18h Batería',
+        price: 90000,
+        description: 'Auriculares.',
+        stock: 9,
+        img: 'https://i.postimg.cc/rFRGq65C/imagen-2025-06-14-143941839.png',
+        category: 'perifericos'
     }
+    
 ]
 
 let error = false

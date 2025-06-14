@@ -5,6 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from "./CartWidget";
 import "../css/Navbar.css";
 import { NavLink } from 'react-router-dom';
+import CartWidgetReactIcons from './CartWidgetReactions';
 
 function NavbarReact() {
   return (
@@ -19,14 +20,14 @@ function NavbarReact() {
             <Nav.Link as={NavLink} to='/category/mas vendidos'>Más vendidos</Nav.Link>
             <Nav.Link as={NavLink} to='/category/ofertas'>Ofertas</Nav.Link>
             <NavDropdown title="Productos" id="collapsible-nav-dropdown">
-              <NavDropdown.Item as={NavLink} to="/category/sillas-gamer">Sillas Gamer</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/category/sillas gamer">Sillas Gamer</NavDropdown.Item>
               <NavDropdown.Item as={NavLink} to="/category/perifericos">Periféricos</NavDropdown.Item>
               <NavDropdown.Item as={NavLink} to="/category/mousepads">Mousepads</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
             <Nav.Link as={NavLink} to='/carro'>
-              <CartWidget/>
+              <CartWidgetReactIcons/>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

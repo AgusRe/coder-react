@@ -9,6 +9,7 @@ import Error from './components/Error';
 import Cart from './components/Cart';
 // import Input from './components/Input';
 import {CartProvider, CartContext} from './context/CartContext';
+import Checkout from './components/Checkout';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/category/:categoryId" element={<ItemListContainer greeting="Estás dentro de la categoría: " />}/>
         <Route path="/item/:itemId" element={<ItemDetailContainer />}/>
         <Route path="/carro" element={<Cart />} />
+        <Route path='/checkout' element={<Checkout/>} />
         <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

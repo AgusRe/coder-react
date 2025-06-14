@@ -3,27 +3,40 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemList from "./ItemList"
 import LoaderComponent from "./LoaderComponent"
+// Firebase y db
+import {db} from "../service/firebase"
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore"
+
 
 const ItemListContainer = ({ greeting }) => {
   const [data, setData] = useState([])
   const { categoryId } = useParams()
   const [loading, setLoading] = useState(false)
 
+
+  // Trabajando con firebase
+
   useEffect(() => {
+
     setLoading(true)
-    getProducts()
-      .then((respuesta) => {
-        if (categoryId) {
-          // Filtra por categoría si existe
-          setData(respuesta.filter((producto) => producto.category === categoryId))
-        } else {
-          // Muestra todo
-          setData(respuesta)
+    // Referenciamos la colección
+    const productsCollection = categoryId ? query(collection(db, "productos"), where("category", "==", categoryId)) : collection(db, "productos")
+    // Pedimos los documentos
+    getDocs(productsCollection) // getDocs devuelve promesa:
+    .then((res) => {
+      // Procesamos la 'res' de firebase:
+      const lista = res.docs.map((doc)=>{
+        return {
+          // Compila datos con data() y usa el doc.id (id de firebase)
+          ...doc.data(),
+          id:doc.id
         }
       })
-      .catch((error) => console.error(error))
-      .finally(()=> setLoading(false))
-  }, [categoryId])
+      setData(lista)
+    })
+    .catch((error) => console.log(error))
+    .finally(()=> setLoading(false))
+  },[])
 
   return (
     <>
