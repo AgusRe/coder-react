@@ -7,7 +7,6 @@
   padding-bottom: 0.5rem;
 }
 
-/* Base styles for links and dropdown toggles */
 .navbar .nav-link,
 .navbar .dropdown-toggle {
   position: relative;
@@ -16,7 +15,6 @@
   transition: color 0.3s ease;
 }
 
-/* Underline only on regular nav-links (not on the dropdown toggle) */
 .navbar .nav-link:not(.dropdown-toggle)::after {
   content: '';
   position: absolute;
@@ -28,19 +26,16 @@
   transition: width 0.3s ease;
 }
 
-/* Hover effects on link text */
 .navbar .nav-link:hover,
 .navbar .dropdown-toggle:hover {
   color: #ff3c78;
   text-shadow: 0 0 8px rgba(255,60,120,0.6);
 }
 
-/* Expand underline on hover (only for nav-links) */
 .navbar .nav-link:hover:not(.dropdown-toggle)::after {
   width: 100%;
 }
 
-/* Dropdown items hover */
 .navbar .dropdown-item {
   transition: background 0.2s ease, color 0.2s ease;
 }
@@ -50,7 +45,6 @@
   color: #ff3c78;
 }
 
-/* CartWidget inside navbar */
 .navbar .nav-link .cart-widget {
   display: flex;
   align-items: center;

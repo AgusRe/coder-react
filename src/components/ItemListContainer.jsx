@@ -15,7 +15,6 @@ const ItemListContainer = ({ greeting }) => {
 
 
   // Trabajando con firebase
-
   useEffect(() => {
 
     setLoading(true)

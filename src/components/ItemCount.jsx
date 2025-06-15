@@ -4,7 +4,6 @@ const ItemCount = ({ stock, onAdd }) => {
   const [count, setCount] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
 
-  // Reset count when stock changes
   useEffect(() => {
     setCount(1);
   }, [stock]);
@@ -21,7 +20,6 @@ const ItemCount = ({ stock, onAdd }) => {
     if (stock === 0) return;
     setIsAdding(true);
     onAdd(count);
-    // Re-enable buttons after a brief moment
     setTimeout(() => setIsAdding(false), 500);
   };
 
