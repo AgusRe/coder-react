@@ -1,37 +1,33 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext()
 
-export const CartProvider = ({children}) => {
-    const [cart, setCart] = useState([])
+// Local Storage:
+const prodLocalStorage = JSON.parse(localStorage.getItem('carrito')) || []
 
-    // Funciones que modifican el estado
+export const CartProvider = ({ children }) => {
+
+    const [cart, setCart]= useState(prodLocalStorage)
+
+    useEffect(()=>{
+        localStorage.setItem('carrito', JSON.stringify(cart))
+    },[cart])
 
     // Agregar un item al carrito sin repetir y sumando cantidades
-    const addItem = (item, cantidad) => {
-        console.log(item, cantidad, 'desde el contexto')
-        console.log({...item, quantity:cantidad}, 'desde el contexto')
-
-        if(isInCart(item.id)) {
-            // Ya está en el carrito:
-            //console.log('Ya está en el carrito, suma cantidad.')
-            setCart(
-                cart.map((prod) => {
-                if(prod.id === item.id) {
-                    // Suma cantidad
+    const addItem = (item, cantidad)=>{
+        if(isInCart(item.id)){
+            const updatedCart = cart.map((prod)=>{
+                if(prod.id === item.id){
                     return {...prod, quantity: prod.quantity + cantidad}
-                }
-                else {
-                    // No modifica el objeto
+                }else{
                     return prod
                 }
-            }))
-        }
-        else {
-            //console.log('No está en el carrito, se agrega nuevo item')
+            })
+            setCart(updatedCart)
+        }else{
             setCart([...cart, {...item, quantity:cantidad}])
-        }   
-    }
+        }
+    }   
 
     // Borrar carrito
     const clear = () => {

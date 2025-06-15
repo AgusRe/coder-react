@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getProducts } from '../mock/AsyncService';  // ← ya no importamos getOneProduct
+import { getProducts } from '../mock/AsyncService';
 import ItemDetail from './ItemDetail';
 import { Link, useParams } from 'react-router-dom';
 import LoaderComponent from './LoaderComponent';
@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
     const productsCollection = collection(db,"productos")
     // Pedimos un documento en particular, creando una referencia al documento que queremos traer:
     const docRef = doc(productsCollection, itemId)
-    // Traemos el documento (1)
+    // Traemos un documento (1)
     getDoc(docRef)
     .then((res) => {
       if(res.data()){
@@ -34,25 +34,6 @@ const ItemDetailContainer = () => {
     
   },[])
 
-  // useEffect(() => {
-  //   setLoading(true)
-  //   setDetalle(null);
-  //   getProducts()
-  //     .then((response) => {
-  //       const producto = response.find(
-  //         item => String(item.id) === String(itemId)
-  //       );
-  //       setDetalle(producto || false);
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error al cargar detalle:', error);
-  //       setDetalle(false);
-  //     })
-  //     .finally(()=>setLoading(false))
-  // }, [itemId]);
-
-  // if (detalle === null) return <p>Cargando detalle…</p>;
-  // if (!detalle) return <p>No se encontró el producto con id "{itemId}".</p>;
   if (invalid) {
     return (
       <div className="text-center py-5">

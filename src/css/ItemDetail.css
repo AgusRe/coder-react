@@ -1,0 +1,26 @@
+.item-detail-card .card {
+  background: #fff;
+  transition: transform 0.2s;
+}
+
+.product-image {
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.product-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.product-price {
+  font-size: 1.75rem;
+}
+
+.product-description {
+  color: #555;
+}
+
+.product-stock {
+  color: #333;
+}
