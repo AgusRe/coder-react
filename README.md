@@ -72,4 +72,4 @@ Posterior a la confirmación de la compra:
 - **React Router Dom:** para la navegación por rutas.
 - **Firebase:** como base de datos.
 #
-Desarrolado por Agustín Ré.
+©️ Desarrolado por Agustín Ré.
