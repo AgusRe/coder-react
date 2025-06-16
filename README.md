@@ -68,8 +68,11 @@ Posterior a la confirmación de la compra:
 - CheckoutForm separado en componente propio, gestionado con React Hook Form y notificaciones.
 
 ## 📖 Librerias Utilizadas 
-- **React Bootstrap:** para el styling de la página.
-- **React Router Dom:** para la navegación por rutas.
-- **Firebase:** como base de datos.
+- **[React Bootstrap:](https://react-bootstrap.netlify.app)** para el styling de la página.
+- **[React Router Dom:](https://reactrouter.com/home)** para la navegación por rutas.
+- **[React Hot Toast:](https://react-hot-toast.com)** para alertas toast.
+- **[React Hook Form:](https://react-hook-form.com)** para hacer envíos de formularios.
+- **[Firebase:](https://firebase.google.com)** como base de datos.
 #
-©️ Desarrolado por Agustín Ré.
+Desarrolado por Agustín Ré.
+
